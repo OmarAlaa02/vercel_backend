@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", async (req, res) => {
-  res.send(await handleGet);
+  res.send(await handleGet(req,"get"));
 });
 
 app.post("/", async (req, res) => {
