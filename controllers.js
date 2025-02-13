@@ -1,7 +1,7 @@
-exports.handlePost = async (req, method) => {
-  return JSON.stringify({ message: "welcome to vercel" });
+exports.handlePost = async (req, next) => {
+  return JSON.stringify({ message: req.someKey });
 };
 
-exports.handleGet = async (req, method) => {
-  return JSON.stringify({ message: "GET request captured" });
+exports.handleGet = async (req, next) => {
+  throw new Error("Error message");
 };
